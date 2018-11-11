@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        div{
+            color: -moz-mac-accentdarkestshadow;
+            margin-left: 20px;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>Общая часть</div>
+    <div>
+    {% block body %} Переопределяется в наследниках {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tag</title>
+</head>
+<body>
+    <h1>List</h1>
+    <ul>
+        {% for element in list %}
+            <li>{{ element }}</li>
+        {% empty %}
+            empty list
+        {% endfor %}
+        <h2>element > 2</h2>
+        {% for element in list %}
+            {% if element > 2 %}
+                <li>{{ element }}</li>
+            {% endif %}
+        {% empty %}
+            empty list
+        {% endfor %}
+    </ul>
+</body>
+</html>
