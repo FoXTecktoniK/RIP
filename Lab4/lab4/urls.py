@@ -19,12 +19,13 @@ from django.urls import path
 from my_app.views import *
 
 urlpatterns = [
+    path('', lambda x: render(x, 'main.html')),
     path('admin/', admin.site.urls),
     url(r'^function_view/', function_view),
     url(r'^class_based_view/', ExampleClassBased.as_view()),
     url(r'^static_view/', ExampleStaticView.as_view()),
     url(r'^var_view/', var_view),
-    url(r'^tag', var_tag),
+    url(r'^tag/', var_tag),
     url(r'^orders/', OrdersView.as_view()),
     url(r'^order/(?P<id>\d+)', OrderView.as_view(), name='order_url'),
 ]

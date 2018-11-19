@@ -1,1 +1,5 @@
-<li>Заказ №<br><a href="{%  url 'order_url' element.id %}">{{ element.title }}</a> </li>
+<p style="color: seagreen">
+<li>Заказ № {{ element.id }}<br>
+    <a href="{%  url 'order_url' element.id %}">{{ element.title }}</a>
+</li><br>
+</p>

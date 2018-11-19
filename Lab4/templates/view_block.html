@@ -7,17 +7,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <style>
         body{
-            background-color: aquamarine;
+            background-color: #ffffff;
         }
         div{
-            color: -moz-mac-accentdarkestshadow;
+            padding-left: 0px;
             margin-left: 20px;
-            background-color: lightskyblue;
+            background-color: lawngreen;
+            font-palette: light;
         }
     </style>
 </head>
 <body>
     <div>Общая часть</div>
+    <br>
     <div>
     {% block body %} Переопределяется в наследниках {% endblock %}
     </div>

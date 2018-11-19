@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
+import random
 
 
 def function_view(request):
@@ -20,15 +21,18 @@ class ExampleStaticView(View):
 
 
 def var_view(request):
-    return render(request, 'first_example_var.html',{ 'my_variable': 'IU5-52'})
+    return render(request, 'first_example_var.html', {'my_variable': 'RIP'})
+
 
 def var_tag(request):
-    return render(request, 'view_tag.html', { 'list': [1, 2, 3, 1, 4, 5]})
+    list = [random.randint(0, 10) for _ in range(10)]
+    return render(request, 'view_tag.html', {'list': list})
+
 
 class OrdersView(View):
     def get(self, request):
         data = {
-            'orders':[
+            'orders': [
                 {'title': 'First order', 'id': 1},
                 {'title': 'Second order', 'id': 2},
                 {'title': 'Third order', 'id': 3},
@@ -36,6 +40,7 @@ class OrdersView(View):
             ]
         }
         return render(request, 'orders.html', data)
+
 
 class OrderView(View):
     def get(self, request, id):
